@@ -1,0 +1,26 @@
+body {
+    background-color:white;
+    color: black;
+    font-family: "Comic Sans", sans-serif;
+  }
+  
+  h1 {
+    color: #f8a;
+    font-weight: bold;
+  }
+  
+  .targets1{
+    display:flex;
+  }
+
+  .targets2{
+    display:flex;
+  }
+
+  .targets3{
+    display:flex;
+  }
+
+  .targets4{
+    display:flex;
+  }
