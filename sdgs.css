@@ -1,26 +1,126 @@
 body {
-    background-color:white;
-    color: black;
-    font-family: "Comic Sans", sans-serif;
-  }
-  
-  h1 {
-    color: #f8a;
-    font-weight: bold;
-  }
-  
-  .targets1{
-    display:flex;
-  }
+  background-color:rgb(104, 181, 233);
+  color: black;
+  font-family: "Comic Sans", sans-serif;
+}
 
-  .targets2{
-    display:flex;
-  }
+.userinput{
+  display: flex;
+}
 
-  .targets3{
-    display:flex;
-  }
 
-  .targets4{
-    display:flex;
-  }
+h1 {
+  color: #d4840d;
+  font-weight: bold;
+}
+
+.block1{
+  display:flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.block2{
+  display:flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.goalbox{
+  max-width: 20%;
+  vertical-align:bottom;
+}
+
+#goalicon1{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+
+#goalicon2{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+
+#goalicon3{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+
+#goalicon4{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+
+#goalicon5{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+#goalicon6{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+#goalicon7{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+#goalicon8{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+#goalicon9{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+#goalicon10{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+#goalicon11{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+#goalicon12{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+#goalicon13{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+#goalicon14{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+#goalicon15{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+#goalicon16{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+#goalicon17{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
+#goalicon18{
+  max-width: 97%;
+  vertical-align:bottom;
+  margin: 10px auto;
+}
