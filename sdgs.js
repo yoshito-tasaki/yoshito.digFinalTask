@@ -6,7 +6,7 @@ const resisterButton = document.getElementById("registerbutton");
 resisterButton.addEventListener('click', OnResisterClick);
 
 const goalboxicon = document.getElementsByClassName("goalbox");
-goalboxicon.addEventListener('click', goalButtonClick);
+goalboxicon[0].addEventListener('click', goalButtonClick);
 
 
 
@@ -15,9 +15,8 @@ function serachButtonClick() {
     let searchWord = document.getElementsByClassName("searchBox");
     let result = [];
     for (let content of sdGoalsAll) {
-        content.filter(value => value.match(/searchWord));
+        // content.filter(value => value.match(/searchWord));
         console.log(content);
-        }
     }
     // for (let i = 0; i < sdGoalsAll.length; i++) {
     //     for (let content of sdGoalsAll[i]) {
@@ -33,8 +32,9 @@ function serachButtonClick() {
 function goalButtonClick() {
     // DOM取得
     let resultDisp = document.getElementsByClassName("resultDisp");
+    let contentList = document.getElementsByClassName("contentList");
     let goalNo = 0;
-    
+
 
     if (contentList.length !== 0) {
         for (let i = 0; i < contentList.length + 1; i++) {
