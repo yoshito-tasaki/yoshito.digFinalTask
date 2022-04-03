@@ -6,9 +6,36 @@ const resisterButton = document.getElementById("registerbutton");
 resisterButton.addEventListener('click', OnResisterClick);
 
 const goalboxicon = document.getElementsByClassName("goalbox");
-goalboxicon[0].addEventListener('click', goalButtonClick);
+console.log(goalboxicon);
+    // 全ての目標アイコンに設定する
+for (let i =0; i < sdGoalsAll.length; i++){
+    goalboxicon[i].addEventListener('click', function(){
+        goalButtonClick(i)})
+}
 
+// データベース操作処理関数の宣言
+function databaseOperation(actionNo){
+    // DOM取得
+    let resultDisp = document.getElementsByClassName("resultDisp");
+    let contentList = document.getElementsByClassName("contentList");
 
+    console.log(contentList);
+    console.log(contentList.length);
+
+    if (contentList.length !== 0) {
+        for (let i = 0; i < contentList.length + i; i++) {
+            let item = resultDisp[0].lastChild
+            console.log(item);
+            resultDisp[0].removeChild(item);
+        }
+    }
+    for (let i = 0; i < sdGoalsAll[actionNo].length; i++) {
+        let newLi = document.createElement("li");
+        newLi.className = "contentList"
+        newLi.innerText = sdGoalsAll[actionNo][i];
+        resultDisp[0].appendChild(newLi);
+    }
+}
 
 // フリーワード検索処理
 function serachButtonClick() {
@@ -29,57 +56,22 @@ function serachButtonClick() {
 };
 
 // 目標アイコンクリック処理
-function goalButtonClick() {
-    // DOM取得
-    let resultDisp = document.getElementsByClassName("resultDisp");
-    let contentList = document.getElementsByClassName("contentList");
-    let goalNo = 0;
-
-
-    if (contentList.length !== 0) {
-        for (let i = 0; i < contentList.length + 1; i++) {
-            let item = resultDisp[0].lastChild
-            console.log(item);
-            resultDisp[0].removeChild(item);
-        }
-    }
-    for (let i = 0; i < sdGoalsAll[actionNo.value - 1].length; i++) {
-        let newLi = document.createElement("li");
-        newLi.className = "contentList"
-        newLi.innerText = sdGoalsAll[actionNo.value - 1][i];
-        resultDisp[0].appendChild(newLi);
-    }
+function goalButtonClick(actionNo) {
+    databaseOperation(actionNo);
 };
 
 // 取り組み内容登録処理
 function OnResisterClick() {
     // ドロップダウンリスト(目標Noの取得)
-    let actionNo = document.getElementById("selectbox");
+    let actionNo = document.getElementById("selectbox").value-1;
+    // let actionNo = document.getElementById("selectbox");
     // 取り組み登録内容(入力値の取得)
     let resisterText = document.getElementById("resistertext");
     // 既存のデータベースに追加
-    sdGoalsAll[actionNo.value - 1].push(resisterText.value);
+    sdGoalsAll[actionNo].push(resisterText.value);
+    // sdGoalsAll[actionNo.value - 1].push(resisterText.value);
 
-    // DOM取得
-    let resultDisp = document.getElementsByClassName("resultDisp");
-    let contentList = document.getElementsByClassName("contentList");
-
-    console.log(contentList);
-    console.log(contentList.length);
-
-    if (contentList.length !== 0) {
-        for (let i = 0; i < contentList.length + 1; i++) {
-            let item = resultDisp[0].lastChild
-            console.log(item);
-            resultDisp[0].removeChild(item);
-        }
-    }
-    for (let i = 0; i < sdGoalsAll[actionNo.value - 1].length; i++) {
-        let newLi = document.createElement("li");
-        newLi.className = "contentList"
-        newLi.innerText = sdGoalsAll[actionNo.value - 1][i];
-        resultDisp[0].appendChild(newLi);
-    }
+    databaseOperation(actionNo);
 };
 
 function getActionContent() {
@@ -94,3 +86,4 @@ function getActionContent() {
 function search() {
     // sdGoalsAll.
 }
+
