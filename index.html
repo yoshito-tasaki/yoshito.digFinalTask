@@ -4,77 +4,108 @@
     <title>Action! SDGs 情報共有</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="sdgs.css" />
-    <script src="sdgs.js"></script>
   </head>
   <body>
     <h1>SDGs 17の目標　Action! SDGs 情報共有サイト</h1>
-    <input id="textbox" type="text" name="search">
-    <button id="decision" 
-            type="button"
-            onclick="OnButtonClick();" >
-            検索
-    </button>
-    <div class="targets1">
-      <div class="target1"></div>
-        <h3 class="target1">目標1</h3> 
-        <p class="target1">貧困をなくそう</p>
-      <div class="target2"></div> 
-        <h3 class="target2">目標2</h3> 
-        <p class="target2">飢餓をゼロに</p>
-      <div class="target3"></div> 
-        <h3 class="target3">目標3</h3> 
-        <p class="target3">すべての人に健康と福祉を</p>
-      <div class="target4"></div>
-        <h3 class="target4">目標4</h3> 
-        <p class="target4">質の高い教育をみんなに</p>
-      <div class="target5"></div> 
-        <h3 class="target5">目標5</h3> 
-        <p class="target5">ジェンダー平等を実現しよう</p>
+    <div class="userinput">
+      <input id="searchtext" type="text" name="search">
+      <button id="search" 
+        type="button"
+        onclick="serachButtonClick();" >
+        フリーワード検索
+      </button>
+      <p>項目No選択</p>
+      <select id="selectbox" name="itemNo">
+        <optgroup label="目標">
+          <option value=1>No1</option>
+          <option value=2>No2</option>
+          <option value=3>No3</option>
+          <option value=4>No4</option>
+          <option value=5>No5</option>
+          <option value=6>No6</option>
+          <option value=7>No7</option>
+          <option value=8>No8</option>
+          <option value=9>No9</option>
+          <option value=10>No10</option>
+          <option value=11>No11</option>
+          <option value=12>No12</option>
+          <option value=13>No13</option>
+          <option value=14>No14</option>
+          <option value=15>No15</option>
+          <option value=16>No16</option>
+          <option value=17>No17</option>
+          <option value=18>No18</option>
+        </optgroup>
+      <input id="resistertext" type="text" name="register">
+      <button id="registerbutton" 
+        type="button" >
+        取り組み内容登録
+      </button>
     </div>
-    <div class="targets2">
-      <div class="target6"></div> 
-        <h3 class="target6">目標6</h3> 
-        <p class="target6">安全な水とトイレを世界中に</p>
-　    <div class="target7"></div> 
-        <h3 class="target7">目標7</h3> 
-        <p class="target7">エネルギーをみんなに、そしてクリーンに</p>
-      <div class="target8"></div> 
-        <h3 class="target8">目標8</h3> 
-        <p class="target8">働きがいも経済成長も</p>
-      <div class="target9"></div> 
-        <h3 class="target9">目標9</h3> 
-        <p class="target9">産業と技術革新の基盤をつくろう</p>
-      <div class="target10"></div> 
-        <h3 class="target10">目標10</h3> 
-        <p class="target10">人や国の不平等をなくそう</p>
+    <div class="resultBase">
+      <h2 class="resultTitle">結果一覧</h2>
+      <ol class="resultDisp"></ol>
     </div>
-    <div class="targets3">
-      <div class="target11"></div> 
-        <h3 class="target11">目標11</h3> 
-        <p class="target11">住み続けられるまちづくりを</p>
-      <div class="target12"></div> 
-        <h3 class="target12">目標12</h3> 
-        <p class="target12">つくる責任 つかう責任</p>
-      <div class="target13"></div> 
-        <h3 class="target13">目標13</h3> 
-        <p class="target13">気候変動に具体的な対策を</p>
-      <div class="target14"></div> 
-        <h3 class="target14">目標14</h3> 
-        <p class="target14">海の豊かさを守ろう</p>
-      <div class="target15"></div> 
-        <h3 class="target15">目標15</h3> 
-        <p class="target15">陸の豊かさも守ろう</p>
+    <h2>各項目毎の取り組み内容は画像をクリック！！</h2>
+    <div class="block1">
+      <div class="goalbox">
+        <img src="sdg_icon_01_ja_2-290x290.png" alt="goalicon1" id="goalicon1">
+      </div>
+        <div class="goalbox"> 
+        <img src="sdg_icon_02_ja_2-290x290.png" alt="goalicon2" id="goalicon2">
+      </div>
+      <div class="goalbox"> 
+        <img src="sdg_icon_03_ja_2-290x290.png" alt="goalicon3" id="goalicon3">
+      </div>
+      <div class="goalbox">
+        <img src="sdg_icon_04_ja_2-290x290.png" alt="goalicon4" id="goalicon4">
+      </div>
+      <div class="goalbox"> 
+        <img src="sdg_icon_05_ja_2-290x290.png" alt="goalicon5" id="goalicon5">
+      </div>
+      <div class="goalbox"> 
+        <img src="sdg_icon_06_ja_2-290x290.png" alt="goalicon6" id="goalicon6">
+      </div>
+      <div class="goalbox"> 
+        <img src="sdg_icon_07_ja_2-290x290.png" alt="goalicon7" id="goalicon7">
+      </div>
+      <div class="goalbox"> 
+        <img src="sdg_icon_08_ja_2-290x290.png" alt="goalicon8" id="goalicon8">
+      </div>
+      <div class="goalbox"> 
+        <img src="sdg_icon_09_ja_2-290x290.png" alt="goalicon9" id="goalicon9">
+      </div>
     </div>
-    <div class="targets4">
-      <div class="target16"></div> 
-        <h3 class="target16">目標16</h3> 
-        <p class="target16">平和と公正をすべての人に</p>
-      <div class="target17"></div> 
-        <h3 class="target17">目標17</h3> 
-        <p class="target17">パートナーシップで目標を達成しよう</p>
-      <div class="target18"></div> 
-        <h3 class="target18">目標18</h3> 
-        <p class="target18">？？？</p>
+    <div class="block2">
+      <div class="goalbox">
+        <img src="sdg_icon_10_ja_3-290x290.png" alt="goalicon10" id="goalicon10">
+      </div>
+        <div class="goalbox"> 
+        <img src="sdg_icon_11_ja_2-290x290.png" alt="goalicon11" id="goalicon11">
+      </div>
+      <div class="goalbox"> 
+        <img src="sdg_icon_12_ja_2-290x290.png" alt="goalicon12" id="goalicon12">
+      </div>
+      <div class="goalbox">
+        <img src="sdg_icon_13_ja_2-290x290.png" alt="goalicon13" id="goalicon13">
+      </div>
+      <div class="goalbox"> 
+        <img src="sdg_icon_14_ja_2-290x290.png" alt="goalicon14" id="goalicon14">
+      </div>
+      <div class="goalbox"> 
+        <img src="sdg_icon_15_ja_2-290x290.png" alt="goalicon15" id="goalicon15">
+      </div>
+      <div class="goalbox"> 
+        <img src="sdg_icon_16_ja_2-290x290.png" alt="goalicon16" id="goalicon16">
+      </div>
+      <div class="goalbox"> 
+        <img src="sdg_icon_17_ja_2-290x290.png" alt="goalicon17" id="goalicon17">
+      </div>
+      <div class="goalbox"> 
+        <img src="sdg_icon_17_ja_2-290x290.png" alt="goalicon18" id="goalicon18">
+      </div>
     </div>
   </body>
 </html>
+<script src="sdgs.js"></script>
+<script src="database.js"></script>
