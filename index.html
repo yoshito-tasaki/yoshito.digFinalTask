@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="sdgs.css" />
   </head>
   <body>
-    <h1>SDGs 17の目標　Action! SDGs 情報共有サイト</h1>
+    <h1>SDGs 17の目標 Action! SDGs 情報共有サイト</h1>
     <div class="userinput">
-      <input id="searchtext" type="text" name="search">
-      <button id="search" 
-        type="button"
-        onclick="serachButtonClick();" >
+      <input id="searchBox" type="text" name="search">
+      <button id="searchButton" 
+        type="button">
         フリーワード検索
       </button>
+      <div></div>
       <p>項目No選択</p>
       <select id="selectbox" name="itemNo">
         <optgroup label="目標">
@@ -43,8 +43,8 @@
       </button>
     </div>
     <div class="resultBase">
-      <h2 class="resultTitle">結果一覧</h2>
-      <ol class="resultDisp"></ol>
+      <h2 class="resultTitle"></h2>
+      <ul class="resultDisp"></ul>
     </div>
     <h2>各項目毎の取り組み内容は画像をクリック！！</h2>
     <div class="block1">
