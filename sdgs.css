@@ -8,9 +8,19 @@ body {
   display: flex;
 }
 
+#searchBox{
+  width:30%
+}
+#resistertext{
+  width:30%
+}
+
+.resultDisp{
+  background-color: aliceblue;
+}
 
 h1 {
-  color: #d4840d;
+  color: #152372;
   font-weight: bold;
 }
 
@@ -26,8 +36,16 @@ h1 {
 }
 
 .goalbox{
-  max-width: 20%;
+  max-width: 100%;
   vertical-align:bottom;
+  overflow: hidden;
+  cursor: pointer;
+  /* transform: scale(1);
+  transition: .3s ease-in-out; */
+}
+.goalbox:hover img{
+  /* transform: scale(1.3); */
+  filter:blur(3px);
 }
 
 #goalicon1{
