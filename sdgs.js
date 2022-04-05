@@ -84,12 +84,27 @@ function OnSearchClick() {
     let resultTitle = document.getElementsByClassName("resultTitle");
     resultTitle[0].innerText = `フリーワード検索結果一覧`;
 
-    for (let key in slimResult) {                               // 検索でヒットした目標No数だけループ処理
-        let newLi = document.createElement("li");               // li要素を作成
-        newLi.className = "contentList"                         // li要素のclass命名
-        newLi.innerText = `目標${key}: ${slimResult[key]}`;     // li要素テキストに目標Noと取り組み内容を格納
-        resultDisp[0].appendChild(newLi);                       // li要素を結果一覧ブロックへ出力
+    console.log(searchWord.value === "")
+    if (searchWord.value === "") {
+        let newLi = document.createElement("li");                  // li要素を作成
+        newLi.className = "contentList"                             // li要素のclass命名
+        newLi.innerText = "一致する登録内容はありません";               // li要素テキストに目標Noと取り組み内容を格納
+        resultDisp[0].append(newLi);
+    } else {
+        for (let key in slimResult) {                               // 検索でヒットした目標No数だけループ処理
+            let newLi = document.createElement("li");               // li要素を作成
+            newLi.className = "contentList"                         // li要素のclass命名
+            newLi.innerText = `目標${key}: ${slimResult[key]}`;     // li要素テキストに目標Noと取り組み内容を格納
+            resultDisp[0].appendChild(newLi);                       // li要素を結果一覧ブロックへ出力
+        }
     }
+    
+//     for (let key in slimResult) {                               // 検索でヒットした目標No数だけループ処理
+//         let newLi = document.createElement("li");               // li要素を作成
+//         newLi.className = "contentList"                         // li要素のclass命名
+//         newLi.innerText = `目標${key}: ${slimResult[key]}`;     // li要素テキストに目標Noと取り組み内容を格納
+//         resultDisp[0].appendChild(newLi);                       // li要素を結果一覧ブロックへ出力
+//     }
 }; // --------------------------------------------------------------------------------------------------
 
 
