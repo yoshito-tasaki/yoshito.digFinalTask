@@ -25,13 +25,22 @@ function databaseOperation(actionNo) {
     let resultDisp = document.getElementsByClassName("resultDisp");
     let contentList = document.getElementsByClassName("contentList");
 
+    console.log(contentList);
+    console.log(contentList.length);
+
     // 結果一覧の表示内容を初期化
     if (contentList.length !== 0) {
         for (let i = 0; i < contentList.length + i; i++) {
             let item = resultDisp[0].lastChild
+            console.log(item);
             resultDisp[0].removeChild(item);
         }
     }
+
+    let resultTitle = document.getElementsByClassName("resultTitle");
+    console.log(resultTitle[0]);
+    resultTitle[0].innerText = `目標${actionNo + 1}:結果一覧`;
+
     // 結果一覧に出力
     for (let i = 0; i < sdGoalsAll[actionNo].length; i++) {     // 目標Noの登録数だけループ処理
         let newLi = document.createElement("li");               // li要素を作成
@@ -39,10 +48,6 @@ function databaseOperation(actionNo) {
         newLi.innerText = sdGoalsAll[actionNo][i];              // li要素テキストに目標Noのi個目要素を格納
         resultDisp[0].appendChild(newLi);                       // li要素を結果一覧ブロックへ出力
     }
-
-    let resultTitle = document.getElementsByClassName("resultTitle");
-    resultTitle[0].innerText = `目標${actionNo + 1}:登録内容一覧`;
-
 } // -------------------------------------------------------------------------------
 
 
@@ -56,41 +61,35 @@ function OnSearchClick() {
         }));
     }
 
+    console.log(searchResult);
     let slimResult = {};                                        // 結果一覧表示用に加工したデータを格納するobj変数初期化
     for (let i = 0; i < searchResult.length; i++) {             // 検索にヒットした要素数分だけループ処理
         if (searchResult[i].length !== 0) {                     // 空配列でなければ・・・
             slimResult[i + 1] = searchResult[i];                // obj変数へ格納（key:目標No value：取り組み内容）
         }
     }
+    console.log(slimResult);
     // DOM取得
     let resultDisp = document.getElementsByClassName("resultDisp");
     let contentList = document.getElementsByClassName("contentList");
     // 結果一覧の表示内容を初期化
-    if (contentList.length !== 0) {                             // liタグがあったら・・・
-        for (let i = 0; i < contentList.length + i; i++) {      // liタグの数+iだけループしてとにかく全li要素を削除
+    if (contentList.length !== 0) {
+        for (let i = 0; i < contentList.length + i; i++) {
             let item = resultDisp[0].lastChild
             console.log(item);
             resultDisp[0].removeChild(item);
         }
     }
 
-    if (searchWord) {
-        let newLi = document.createElement("li");           　　    // li要素を作成
-        newLi.className = "contentList"                         　　// li要素のclass命名
-        newLi.innerText = "一致する登録内容はありません";     　　　　// li要素テキストに目標Noと取り組み内容を格納
-        resultDisp[0].append(newLi);
-    } else {
-        for (let key in slimResult) {                               // 検索でヒットした目標No数だけループ処理
-            let newLi = document.createElement("li");               // li要素を作成
-            newLi.className = "contentList"                         // li要素のclass命名
-            newLi.innerText = `目標${key}: ${slimResult[key]}`;     // li要素テキストに目標Noと取り組み内容を格納
-            resultDisp[0].appendChild(newLi);                       // li要素を結果一覧ブロックへ出力
-        }
-    }
-
     let resultTitle = document.getElementsByClassName("resultTitle");
     resultTitle[0].innerText = `フリーワード検索結果一覧`;
 
+    for (let key in slimResult) {                               // 検索でヒットした目標No数だけループ処理
+        let newLi = document.createElement("li");               // li要素を作成
+        newLi.className = "contentList"                         // li要素のclass命名
+        newLi.innerText = `目標${key}: ${slimResult[key]}`;     // li要素テキストに目標Noと取り組み内容を格納
+        resultDisp[0].appendChild(newLi);                       // li要素を結果一覧ブロックへ出力
+    }
 }; // --------------------------------------------------------------------------------------------------
 
 
